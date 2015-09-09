@@ -32,7 +32,7 @@ angular.module('eventModule', [])
 .run([function () {
 	console.log("Event Module::running");
 }])
-.controller('EventCtrl', ['$scope', '$modal', 'MainTitle',function ($scope,$modal,mainTitle) {
+.controller('EventCtrl', ['$scope', '$modal', '$http', 'MainTitle',function ($scope,$modal,$http,mainTitle) {
 	this.title = mainTitle.title;
 	
 	this.menu=[
@@ -67,7 +67,19 @@ angular.module('eventModule', [])
 	this.getEventIndex = function(){
 		return(this.eventIndex);
 	}
-/*
+
+	
+	this.getData = function(){
+		var scope = this;
+	$http.get('http://172.19.20.196:8081/api/nougals')
+      .success(function(data){
+        scope.people = data;
+      });
+	}
+
+	this.getData();
+	/*
+	//console.log(this.people.length)
 	this.people=[
 	{
 		firstName : "Mark",
@@ -88,9 +100,7 @@ angular.module('eventModule', [])
 		whereAbouts: "London"
 	},
 	]
-
-*/ 
-
+*/
 	this.addPerson = function(userId) {
     
 		console.log("clicked add");
