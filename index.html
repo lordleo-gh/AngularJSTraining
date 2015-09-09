@@ -23,7 +23,7 @@
       <ul data-ref="todoList">
         <li  class="list-group-item" ng-repeat="todo in todoList.todos">
           <input type="checkbox" ng-model="todo.done">
-          <span class="done-{{todo.done}}">{{$index}} - {{todo.text}}</span>
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
         </li>
       </ul>
       
@@ -35,6 +35,7 @@
         <span ng-show="form.todoText.$error.minlength">Minimum length is 2</span>
         
         <input type="submit" value="Add Todo" ng-disabled="form.$invalid">
+		<input type="button" value="Reset" ng-click="todoList.Clear()">
       </form>
     </article>
   </section>

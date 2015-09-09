@@ -11,13 +11,17 @@ angular.module('todoApp', [])
       this.todos.push({text:this.todoText, done:false});
       this.todoText = '';
     };
- 
+	
+	this.clear = function(){
+		this.todos = $filter('afilter')(this.todos,{done:false})
+	}
+	
     this.uncompleted = function() {
       var count = 0;
       
       angular.forEach(this.todos, function(todo) {
         if (!todo.done) {
-          count = count + 1;
+          count = count + 2;
         }
       });
       

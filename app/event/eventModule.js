@@ -67,7 +67,7 @@ angular.module('eventModule', [])
 	this.getEventIndex = function(){
 		return(this.eventIndex);
 	}
-
+/*
 	this.people=[
 	{
 		firstName : "Mark",
@@ -89,7 +89,7 @@ angular.module('eventModule', [])
 	},
 	]
 
-
+*/ 
 
 	this.addPerson = function(userId) {
     
